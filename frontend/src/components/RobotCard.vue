@@ -45,7 +45,7 @@
         block
         color="primary"
         :disabled="quantity <= 0 || quantity > robot.stock"
-        @click="addRobot({ ...robot, quantity: quantity })"
+        @click="addRobot({ ...robot, quantity: parseInt(quantity)}); quantity = 1"
       >
         <v-icon small class="px-1"> fa-cart-plus </v-icon>
         Add to cart

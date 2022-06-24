@@ -31,7 +31,14 @@ export default new Vuex.Store({
     addRobot(state, robot) {
       if (state.cart.has(robot.name)) {
         const selected = state.cart.get(robot.name)
-        if (selected.quantity < selected.stock) selected.quantity += 1
+        console.log('quantity', selected.stock, selected.quantity , robot.quantity)
+
+        if (selected.quantity + robot.quantity <= selected.stock) 
+        { 
+          selected.quantity += robot.quantity 
+        }
+        else selected.quantity = selected.stock
+
         state.cart.set(robot.name, selected)
       } else {
         state.cart.set(robot.name, { quantity: 1, ...robot })

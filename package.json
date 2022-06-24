@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd server && node index.js & cd frontend && npm run start"
+    "backend": "cd server && node index.js",
+    "frontend": "cd frontend && npm run serve",
+    "start": "concurrently \"npm run backend\"  \"npm run frontend\" "
   },
   "repository": {
     "type": "git",
@@ -13,5 +15,8 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/morphosisteam/robot-market#readme"
+  "homepage": "https://bitbucket.org/morphosisteam/robot-market#readme",
+  "devDependencies": {
+    "concurrently": "^7.2.2"
+  }
 }
