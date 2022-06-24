@@ -1,9 +1,9 @@
 {
-  "name": "sigservice-test",
+  "name": "keeneye-test",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --port 3000",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "fix": "npx eslint --fix --fix-type suggestion,layout,problem \"src/**/*.vue\" \"src/**/*.js\" \"src/**/*.ts\""

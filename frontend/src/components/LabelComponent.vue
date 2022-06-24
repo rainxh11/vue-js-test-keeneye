@@ -1,12 +1,12 @@
 <template>
-  <v-row no-gutters class="align-center">
+  <v-row no-gutters dense class="align-center">
     <v-col cols="3">
-      <v-icon v-if="icon" class="px-2">
+      <v-icon small v-if="icon" class="px-2">
         {{ icon }}
       </v-icon>
     </v-col>
     <v-col cols="9">
-      <span class="body-1 pr-2 grey--text">{{ text }}</span
+      <span class="grey--text">{{ text }}</span
       ><Br />
       <slot></slot>
     </v-col>

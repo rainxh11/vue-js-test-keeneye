@@ -3,6 +3,7 @@
     <v-app-bar
       app
       dark
+      dense
       color="blue"
     >
       <div class="text-h5">
