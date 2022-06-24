@@ -79,7 +79,7 @@ export default {
 
     const pagination = reactive({
       page: 1,
-      pageSize: 8,
+      pageSize: 5,
     })
     const skip = computed(() => {
       const ratio = pagination.page <= 0 ? 0 : pagination.page - 1
