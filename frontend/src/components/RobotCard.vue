@@ -57,7 +57,7 @@
 <script>
 import LabelComponent from "./LabelComponent.vue"
 import { ref } from "vue-demi"
-import { mapMutations } from "vuex"
+import { mapActions } from "vuex"
 
 export default {
   components: { LabelComponent },
@@ -75,7 +75,7 @@ export default {
     const quantity = ref(1)
     return {
       quantity,
-      ...mapMutations(["addRobot"]),
+      ...mapActions(["addRobot"]),
     }
   },
 }
