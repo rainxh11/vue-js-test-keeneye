@@ -42,7 +42,7 @@
         </v-col>
       </v-row>
     </div>
-    <div class="col-md-4 col-xs-12 sidebar">
+    <div class="col-md-4 col-xs-12" :class="{ 'sidebar' : !$vuetify.breakpoint.mobile }">
       <robot-cart class="py-2" />
     </div>
   </div>
