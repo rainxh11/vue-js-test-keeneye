@@ -50,6 +50,6 @@ export default Vue.extend({
 <style scoped>
 .scrollable-sidebar {
   overflow-y: scroll;
-  max-height: 60vh;
+  max-height: 65vh;
 }
 </style>

@@ -24,6 +24,7 @@
           outlined
           dense
           label="Items per page"
+           @change="pagination.page = 1"
           :items="[5, 8, 10, 20, 50, 100]"></v-select>
       </v-card-title>
 

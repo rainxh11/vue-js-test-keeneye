@@ -11,19 +11,16 @@
         </label-component>
 
         <label-component icon="fa-coins" text="Price">
-          <span class="body-1 font-weight-bold">{{
-            robot.price | formatCurrency
-          }}</span>
+          <span class="body-1 font-weight-bold">{{ robot.price | formatCurrency }}</span>
         </label-component>
 
         <label-component icon="fa-calendar-days" text="Cteated at">
-          <span class="body-1 font-weight-bold">{{
-            robot.createdAt | formatDate
-          }}</span>
+          <span class="body-1 font-weight-bold">{{ robot.createdAt | formatDate }}</span>
         </label-component>
 
         <label-component icon="fa-cubes" text="Stock">
-          <span class="body-1 font-weight-bold">{{ robot.stock }}</span>
+          <span class="body-1 font-weight-bold">{{ robot.stock }} </span>
+          <div v-if="robot.stock === 0" class="warning--text text-body-1"><i>OUT OF STOCK</i></div>
         </label-component>
       </v-col>
     </v-card-title>
@@ -36,8 +33,7 @@
         :max="robot.stock"
         outlined
         dense
-        :min="0"
-      />
+        :min="0" />
     </v-card-actions>
 
     <v-card-actions>
@@ -45,8 +41,10 @@
         block
         color="primary"
         :disabled="quantity <= 0 || quantity > robot.stock"
-        @click="addRobot({ ...robot, quantity: parseInt(quantity)}); quantity = 1"
-      >
+        @click="
+          addRobot({ ...robot, quantity: parseInt(quantity) })
+          quantity = 1
+        ">
         <v-icon small class="px-1"> fa-cart-plus </v-icon>
         Add to cart
       </v-btn>
@@ -55,9 +53,9 @@
 </template>
 
 <script>
-import LabelComponent from "./LabelComponent.vue"
-import { ref } from "vue-demi"
-import { mapActions } from "vuex"
+import LabelComponent from './LabelComponent.vue'
+import { ref } from 'vue-demi'
+import { mapActions } from 'vuex'
 
 export default {
   components: { LabelComponent },
@@ -75,7 +73,7 @@ export default {
     const quantity = ref(1)
     return {
       quantity,
-      ...mapActions(["addRobot"]),
+      ...mapActions(['addRobot']),
     }
   },
 }
