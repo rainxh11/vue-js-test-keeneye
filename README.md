@@ -7,8 +7,8 @@ where on the right side of the screen should display a cart that show a list of 
 
 ## Contact Details
 Please fill in your name and email
-- Name: -
-- Email: -
+- Name: Ahmed Chakhoum
+- Email: [rainxh11@gmail.com](mailto:rainxh11@gmail.com)
 
 ## Features
 
