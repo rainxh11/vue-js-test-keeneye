@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card max-width="100%" class="mx-1 my-3 mr-4 pa-2" :class="{ 'scrollable-sidebar': !$vuetify.breakpoint.mobile }">
+    <v-card max-width="100%" class="mx-1 my-3 mr-4 pa-2">
       <v-card-title>
         <v-icon large>fa-cart-shopping</v-icon>
         <h2 class="px-5">Shopping Cart</h2>
@@ -18,8 +18,10 @@
         <b>Total: </b>
         {{ getCart.map(x => x.quantity * x.price).reduce((a, c) => a + c, 0) | formatCurrency }}
       </div>
-      <div v-for="item in getCart" :key="item.name">
-        <cart-item :item="item" :decrement="decrementQuantity" :increment="incrementQuantity" :remove="removeRobot" />
+      <div :class="{ 'scrollable-sidebar': !$vuetify.breakpoint.mobile }">
+        <div v-for="item in getCart" :key="item.name">
+          <cart-item :item="item" :decrement="decrementQuantity" :increment="incrementQuantity" :remove="removeRobot" />
+        </div>
       </div>
     </v-card>
   </div>
@@ -48,6 +50,6 @@ export default Vue.extend({
 <style scoped>
 .scrollable-sidebar {
   overflow-y: scroll;
-  max-height: 80vh;
+  max-height: 60vh;
 }
 </style>
