@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card max-width="100%" class="mx-1 my-3 mr-4 pa-2">
+    <v-card max-width="100%" class="mx-1 my-3 mr-4 pa-2 sidebar">
       <v-card-title>
         <v-icon large>fa-cart-shopping</v-icon>
         <h2 class="px-5">Shopping Cart</h2>
@@ -44,3 +44,10 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+.sidebar {
+  overflow-y: scroll;
+  max-height: 80vh;
+}
+</style>
